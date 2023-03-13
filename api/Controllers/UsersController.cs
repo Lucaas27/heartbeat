@@ -7,9 +7,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace api.Controllers
 {
-    [ApiController]
-    [Route("api/[controller]")] // endpoint:  GET api/users
-    public class UsersController : ControllerBase
+    public class UsersController : BaseApiController
     {
         //In order to use the DB session inside this class we need to assign the session below to a private property
         private readonly DataContext _context;
