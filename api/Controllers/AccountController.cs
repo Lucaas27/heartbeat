@@ -22,7 +22,7 @@ namespace api.Controllers
         [HttpPost("register")] // POST api/account/register?username=sam&password=password
         public async Task<ActionResult<AppUser>> Register(RegisterDto registerDto)
         {
-            if (await UserExists(registerDto.Username)) return BadRequest("Username is already in user");
+            if (await UserExists(registerDto.Username)) return BadRequest("Username is already in use");
 
             using var hmac = new HMACSHA512(); // Hashing algorithm 
 
